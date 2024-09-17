@@ -1,9 +1,35 @@
 * {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
-header,
+:root {
+  --white: #ffffff;
+  --green: #8abca4;
+  --black: #000000;
+}
+
+header {
+  background-color: var(--green);
+  padding: 0px;
+  height: 40px;
+}
+
 footer {
-  background-color: lightblue;
-  padding: 12px;
+  background-color: white;
+  padding: 0px;
+}
+
+button {
+  background-color: var(--green);
+  border-radius: 8px;
+  border-color: none;
+}
+
+h1 {
+  font-size: 64px;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: regular;
 }
