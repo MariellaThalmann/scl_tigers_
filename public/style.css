@@ -6,12 +6,18 @@
   --white: #ffffff;
   --green: #8abca4;
   --black: #000000;
+  --grey: #ededed;
 }
 
 header {
+  padding-left: 10px;
+  display: flex;
+  justify-content: center; /* Zentriert horizontal */
+  align-items: center; /* Zentriert vertikal */
+
+  height: 10vh; /* Höhe auf 100% der Ansichtsfläche setzen */
   background-color: var(--green);
-  padding: 0px;
-  height: 40px;
+  color: var(--white);
 }
 
 footer {
@@ -22,7 +28,8 @@ footer {
 button {
   background-color: var(--green);
   border-radius: 8px;
-  border-color: none;
+  border-color: inherit;
+  margin-bottom: 20px;
 }
 
 h1 {
@@ -32,4 +39,18 @@ h1 {
 h2 {
   font-size: 36px;
   font-weight: regular;
+}
+
+.post {
+  background-color: var(--grey);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  padding: 10px;
+  display: block;
+  align-content: end;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }

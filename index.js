@@ -1,11 +1,11 @@
 import { createApp } from "./config.js";
 
 const app = createApp({
-  user: "autumn_star_7622",
-  host: "168.119.168.41",
-  database: "demo",
-  password: "uaioysdfjoysfdf",
-  port: 18324,
+  user: "dawn_water_3245",
+  host: "bbz.cloud",
+  database: "dawn_water_3245",
+  password: "720b8cf3cac1877e2ba687da65daf3e4",
+  port: 30211,
 });
 
 /* Startseite */
@@ -17,19 +17,20 @@ app.get("/impressum", async function (req, res) {
   res.render("impressum", {});
 });
 
-app.get("/views/gallery.handlebars", async function (req, res) {
-  res.render("gallery", {});
+app.get("/gallery", async function (req, res) {
+  const posts = await app.locals.pool.query("select * from posts");
+  res.render("gallery", { posts: posts.rows });
 });
 
-app.get("/views/profil.handlebars", async function (req, res) {
+app.get("/profil", async function (req, res) {
   res.render("profil", {});
 });
 
-app.get("/views/login.handlebars", async function (req, res) {
+app.get("/login", async function (req, res) {
   res.render("login", {});
 });
 
-app.get("/views/registration.handlebars", async function (req, res) {
+app.get("/registration", async function (req, res) {
   res.render("login", {});
 });
 /* Wichtig! Diese Zeilen müssen immer am Schluss der Website stehen! */

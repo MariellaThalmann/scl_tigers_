@@ -1,2 +1,10 @@
 <h2>Gallery</h2>
 <button>Create Post</button>
+
+{{#posts}}
+  <div class="post">
+    <small>{{timestamp}}</small>
+    <h2>{{title}}</h2>
+    <p>{{description}}</p>
+  </div>
+{{/posts}}
