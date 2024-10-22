@@ -10,26 +10,33 @@
 }
 
 header {
-  padding-left: 10px;
   display: flex;
-  justify-content: center; /* Zentriert horizontal */
+  padding-left: 10px;
+  justify-content: space-evenly; /* Zentriert horizontal */
   align-items: center; /* Zentriert vertikal */
-
-  height: 10vh; /* Höhe auf 100% der Ansichtsfläche setzen */
+  padding: 10px 20px;
   background-color: var(--green);
   color: var(--white);
+  height: 10vh; /* Höhe auf 100% der Ansichtsfläche setzen */
 }
 
 footer {
   background-color: white;
   padding: 0px;
+  height: 2vh;
+  border-top: #000000 2pt;
 }
 
 button {
   background-color: var(--green);
   border-radius: 8px;
   border-color: inherit;
-  margin-bottom: 20px;
+  margin: 10px;
+  width: 323px;
+}
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 h1 {
@@ -46,11 +53,4 @@ h2 {
   border-radius: 8px;
   margin-bottom: 1rem;
   padding: 10px;
-  display: block;
-  align-content: end;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
 }

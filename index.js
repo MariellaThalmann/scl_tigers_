@@ -22,8 +22,16 @@ app.get("/gallery", async function (req, res) {
   res.render("gallery", { posts: posts.rows });
 });
 
+app.get("/post/:id", async function (req, res) {
+  const posts = await app.locals.pool.query(
+    `select * from posts WHERE id = ${req.params.id}`
+  );
+  res.render("post", { posts: posts.rows });
+});
+
 app.get("/profil", async function (req, res) {
-  res.render("profil", {});
+  const users = await app.locals.pool.query("select * from users where id = 1");
+  res.render("profil", { users: users.rows });
 });
 
 app.get("/login", async function (req, res) {
@@ -33,6 +41,7 @@ app.get("/login", async function (req, res) {
 app.get("/registration", async function (req, res) {
   res.render("login", {});
 });
+
 /* Wichtig! Diese Zeilen müssen immer am Schluss der Website stehen! */
 app.listen(3010, () => {
   console.log(`Example app listening at http://localhost:3010`);

@@ -1,9 +1,17 @@
 <h2>My Profil</h2>
 
-<h3>Username:<h6>max_mustermann</h6></h3>
+<!--<h3>Username:<h6>max_mustermann</h6></h3>
 <h3>Prename:<h6>Max</h6></h3>
 <h3>Name:<h6>Mustermann</h6></h3>
 <h3>E-Mail:<h6>max_mustermann@gmail.com</h6></h3>
 <h3>Phonenumber:<h6>+41 79 ... .. ..</h6></h3>
 <h3>Age:<h6>18</h6></h3>
-<h3>Pasword:<h6>max_mustermann</h6></h3>
+<h3>Pasword:<h6>max_mustermann</h6></h3> //-->
+
+{{#users}}
+  <div class="user">
+    <small>{{username}}</small>
+    <h2>{{name}}</h2>
+    <p>{{prename}}</p>
+  </div>
+{{/users}}
