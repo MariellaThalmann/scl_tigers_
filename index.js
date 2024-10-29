@@ -29,6 +29,26 @@ app.get("/post/:id", async function (req, res) {
   res.render("post", { posts: posts.rows });
 });
 
+/*29.10.2024 Formular Post*/
+app.get("/new_post", async function (req, res) {
+  res.render("new_post", {});
+});
+
+app.post("create_post/", async function (req, res) {
+  await app.locals.pool.query(
+    "INSERT INTO posts (title, image, timestamp, likes, description, user_id) VALUES ($1, $2, $3, $4, $5, $6)",
+    [
+      req.body.title,
+      req.body.image,
+      req.body.timestamp,
+      req.body.likes,
+      req.body.description,
+      req.body.user_id,
+    ]
+  );
+  res.redirect("/start");
+});
+
 app.get("/profil", async function (req, res) {
   const users = await app.locals.pool.query("select * from users where id = 1");
   res.render("profil", { users: users.rows });

@@ -19,6 +19,10 @@ header {
   color: var(--white);
   height: 10vh; /* Höhe auf 100% der Ansichtsfläche setzen */
 }
+/*navigationstext gestalten */
+header a:hover {
+  color: var(--black);
+}
 
 footer {
   background-color: white;
@@ -30,22 +34,42 @@ footer {
 button {
   background-color: var(--green);
   border-radius: 8px;
-  border-color: inherit;
+  border-width: 0;
   margin: 10px;
   width: 323px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
+
+button a {
+  color: var(--white);
+}
+
+button:hover {
+  background-color: var(--grey);
+  color: var(--black);
+}
+
 a {
   text-decoration: none;
   color: inherit;
+  font-size: 16px;
+  font-weight: 200;
+}
+
+p {
+  font-size: 16px;
+  font-weight: 200;
 }
 
 h1 {
   font-size: 64px;
+  font-weight: 500;
 }
 
 h2 {
-  font-size: 36px;
-  font-weight: regular;
+  font-size: 32px;
+  font-weight: 300;
 }
 
 .post {
