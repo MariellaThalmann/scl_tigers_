@@ -31,6 +31,10 @@ app.get("/post/:id", async function (req, res) {
 
 /*29.10.2024 Formular Post*/
 app.get("/new_post", async function (req, res) {
+  if (!req.session.userid) {
+    res.redirect("/login");
+    return;
+  }
   res.render("new_post", {});
 });
 

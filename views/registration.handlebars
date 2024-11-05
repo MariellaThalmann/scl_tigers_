@@ -1,13 +1,19 @@
-<h2>Registration</h2>
+<h2>Registrieren</h2>
 
-<hr />
-
-<h3>Kontaktieren Sie uns!</h3>
-
-<form>
-  E-Mail:
-  <input type="email" /><br/>
-  Nachricht:
-  <textarea></textarea><br />
-  <input type="submit" value="Senden" />
+<form action="/registration" method="POST">
+  Username:
+  <input name="username" type="text" /><br />
+  prename
+  <input name="prename" type="text" /><br />
+  name
+  <input name="name" type="text" /><br />
+  age
+  <input name="age" type="int" /><br />
+  phonenumber
+  <input name="phonenumber" type="text" /><br />
+  email
+  <input name="email" type="text" /><br />
+  Passwort:
+  <input name="passwort" type="password" /><br />
+  <input type="submit" value="Registrieren" />
 </form>

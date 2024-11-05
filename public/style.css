@@ -44,6 +44,9 @@ button {
 button a {
   color: var(--white);
 }
+button a:hover {
+  color: var(--black);
+}
 
 button:hover {
   background-color: var(--grey);
