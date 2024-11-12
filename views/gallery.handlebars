@@ -3,11 +3,13 @@
 
 {{#posts}}
   <div class="post">
-    <div> asdfasdfasd</div>
-    <small>{{timestamp}}</small>
-    <h1>{{username}}</h1>
-    <h2>{{title}}</h2>
-    <p>{{description}}</p>
-    <a href="/post/{{id}}">Details</a>
+    <img src="/uploads/{{image}}" alt="" />
+    <div class="innercontainer">
+      <small>{{timestamp}}</small>
+      <h1>{{username}}</h1>
+      <h2>{{title}}</h2>
+      <p>{{description}}</p>
+      <a href="/post/{{id}}">Details</a>
+    </div>
   </div>
 {{/posts}}

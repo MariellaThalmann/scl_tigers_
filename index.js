@@ -1,4 +1,4 @@
-import { createApp } from "./config.js";
+import { createApp, upload } from "./config.js";
 
 const app = createApp({
   user: "dawn_water_3245",
@@ -11,6 +11,30 @@ const app = createApp({
 /* Startseite */
 app.get("/", async function (req, res) {
   res.render("start", {});
+});
+
+/*29.10.2024 Formular Post*/
+app.get("/new_post", async function (req, res) {
+  if (!req.session.user_id) {
+    res.redirect("/login");
+    return;
+  }
+  res.render("new_post", {});
+});
+
+app.post("/create_post", upload.single("image"), async function (req, res) {
+  await app.locals.pool.query(
+    "INSERT INTO posts (title, image, timestamp, likes, description, user_id) VALUES ($1, $2, $3, $4, $5, $6)",
+    [
+      req.body.title,
+      req.file.filename,
+      req.body.timestamp,
+      0,
+      req.body.description,
+      req.session.user_id,
+    ]
+  );
+  res.redirect("/gallery");
 });
 
 app.get("/impressum", async function (req, res) {
@@ -27,30 +51,6 @@ app.get("/post/:id", async function (req, res) {
     `select * from posts WHERE id = ${req.params.id}`
   );
   res.render("post", { posts: posts.rows });
-});
-
-/*29.10.2024 Formular Post*/
-app.get("/new_post", async function (req, res) {
-  if (!req.session.userid) {
-    res.redirect("/login");
-    return;
-  }
-  res.render("new_post", {});
-});
-
-app.post("create_post/", async function (req, res) {
-  await app.locals.pool.query(
-    "INSERT INTO posts (title, image, timestamp, likes, description, user_id) VALUES ($1, $2, $3, $4, $5, $6)",
-    [
-      req.body.title,
-      req.body.image,
-      req.body.timestamp,
-      req.body.likes,
-      req.body.description,
-      req.body.user_id,
-    ]
-  );
-  res.redirect("/start");
 });
 
 app.get("/profil", async function (req, res) {

@@ -74,10 +74,10 @@ button a {
 }
 button a:hover {
   color: var(--black);
+  background-color: var(--grey);
 }
 
 button:hover {
-  background-color: var(--grey);
   color: var(--black);
 }
 
@@ -114,13 +114,62 @@ p {
 /***************************************************************
 /*Gestaltung Posts*/
 .post {
+  display: flex;
+  flex-direction: row;
   background-color: var(--grey);
   border-radius: 8px;
   margin-bottom: 1rem;
   padding: 10px;
   margin-top: 30px;
+  width: 60vw;
+}
+img {
+  width: 30vw;
+  margin-right: 3vw;
+  height: auto;
+  object-fit: contain;
+}
+.innercontainer {
+  display: flex;
+  flex-direction: column;
 }
 /*****************************************************************
+
+
+/*Login***********************************************************/
+form input{
+  background-color: var(--grey);
+  border-radius: 8px;
+  border-width: 0;
+}
+
+.Button-Form {
+  color: var(--white);
+  background-color: var(--green);
+  border-radius: 8px;
+  border-width: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 200px;
+}
+
+.Button-Form:hover {
+  color: var(--black);
+  background-color: var(--grey);
+}
+
+.Regi {
+  color: var(--green);
+  margin-top: 20px;
+}
+
+.Regi:hover {
+  color: var(--grey);
+}
+
+
+/*********************************************************************
 
 
 /*Footer**********************************************************/

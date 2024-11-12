@@ -71,7 +71,7 @@ export function createApp(dbconfig) {
           console.log(error);
         }
         if (bcrypt.compareSync(req.body.passwort, result.rows[0].passwort)) {
-          req.session.userid = result.rows[0].id;
+          req.session.user_id = result.rows[0].id;
           res.redirect("/gallery");
         } else {
           res.redirect("/login");
