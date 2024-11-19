@@ -6,7 +6,10 @@
 
 /*Main = Body ohne Header und ohne Footer*/
 main {
-  margin-left: 20px;
+  margin-left: 10%;
+  margin-top: 10%;
+  margin-right: 10%;
+  margin-bottom: 5%;
 }
 
 /*definierte Farben*/
@@ -61,6 +64,8 @@ button {
   border-width: 0;
   background-color: white;
   margin: 0px;
+  margin-bottom: 30px;
+  margin-top: 20px;
 }
 
 button a {
@@ -137,11 +142,23 @@ img {
 
 
 /*Login***********************************************************/
+form {
+  width: 97%;
+}
+
 form input{
   background-color: var(--grey);
   border-radius: 8px;
   border-width: 0;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+width: 100%;
 }
+
+
+
 
 .Button-Form {
   color: var(--white);
@@ -175,9 +192,20 @@ form input{
 /*Footer**********************************************************/
 footer {
   background-color: white;
-  padding: 0px;
-  height: 2vh;
-  border-top: #000000 2pt;
-  margin: 20px;
+  border-top: 1px solid #9C9C9C; /* 2px dicker schwarzer Border */
+  padding: 10px;             /* Abstand im Footer-Inhalt */
+  margin-top: 60px;
+}
+
+footer h5 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+footer a {
+  margin-left: 20px;
+  margin-bottom: 10px;
 }
 /*****************************************************************

@@ -37,6 +37,34 @@ app.post("/create_post", upload.single("image"), async function (req, res) {
   res.redirect("/gallery");
 });
 
+/* Post like function*/
+app.post("/like/:id", async function (req, res) {
+  if (!req.session.user_id) {
+    res.redirect("/login");
+    return;
+  }
+
+  await app.locals.pool.query(
+    "INSERT INTO likes (post_id, user_id) VALUES ($1, $2)",
+    [req.params.id, req.session.user_id]
+  );
+  res.redirect("/gallery");
+});
+
+/* post id */
+app.get("/post/:id", async function (req, res) {
+  const posts = await app.locals.pool.query(
+    "SELECT * from posts WHERE id = $1",
+    [req.params.id]
+  );
+  const likes = await app.locals.pool.query(
+    "SELECT COUNT(user_id) FROM likes WHERE post_id = $1",
+    [req.params.id]
+  );
+  res.render("post", { posts: posts.rows, likes: likes.rows[0] });
+});
+
+/* Impressum*/
 app.get("/impressum", async function (req, res) {
   res.render("impressum", {});
 });
@@ -44,13 +72,6 @@ app.get("/impressum", async function (req, res) {
 app.get("/gallery", async function (req, res) {
   const posts = await app.locals.pool.query("select * from posts");
   res.render("gallery", { posts: posts.rows });
-});
-
-app.get("/post/:id", async function (req, res) {
-  const posts = await app.locals.pool.query(
-    `select * from posts WHERE id = ${req.params.id}`
-  );
-  res.render("post", { posts: posts.rows });
 });
 
 app.get("/profil", async function (req, res) {
