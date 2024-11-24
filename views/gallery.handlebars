@@ -1,5 +1,5 @@
 <h2>Gallery</h2>
-<button> <a href="/new_post">Create Post</a></button>
+<button class="login"> <a href="/new_post">Create Post</a></button>
 
 {{#posts}}
   <div class="post">
@@ -13,7 +13,7 @@
 
       <!--Likes_neu-->
       <form action="/like/{{id}}" enctype="multipart/form-data" method="POST">
-        <input type="submit" value="liken" />
+        <input type="image" src="/public/like.jpg" />
       </form>
 
     </div>

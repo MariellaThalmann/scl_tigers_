@@ -59,7 +59,7 @@ button {
   padding-top: 20px;
   padding-bottom: 20px;
 }*/
-
+/*
 button {
   border-width: 0;
   background-color: white;
@@ -85,7 +85,36 @@ button a:hover {
 button:hover {
   color: var(--black);
 }
+*/
+.login {
+  color: var(--white);
+  background-color: var(--green);
+  width: 269px;
+  height: 58px;
+  border-radius: 8px;
+  border-width: 0;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-right: 120px;
+}
+.login a:hover {
+  color: var(--black);
+  background-color: var(--grey);
+}
+.login:hover {
+  background-color: var(--grey);
+}
 
+.registration {
+  color: var(--black);
+  background-color: var(--grey);
+  width: 269px;
+  height: 58px;
+  border-radius: 8px;
+  border-width: 0;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
 /*
 button:hover {
   background-color: var(--grey);
