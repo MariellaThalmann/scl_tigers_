@@ -24,11 +24,11 @@ app.get("/new_post", async function (req, res) {
 
 app.post("/create_post", upload.single("image"), async function (req, res) {
   await app.locals.pool.query(
-    "INSERT INTO posts (title, image, timestamp, likes, description, user_id) VALUES ($1, $2, $3, $4, $5, $6)",
+    "INSERT INTO posts (title, image, date, likes, description, user_id) VALUES ($1, $2, $3, $4, $5, $6)",
     [
       req.body.title,
       req.file.filename,
-      req.body.timestamp,
+      req.body.date,
       0,
       req.body.description,
       req.session.user_id,
@@ -47,6 +47,19 @@ app.post("/like/:id", async function (req, res) {
   await app.locals.pool.query(
     "INSERT INTO likes (post_id, user_id) VALUES ($1, $2)",
     [req.params.id, req.session.user_id]
+  );
+  res.redirect("/gallery");
+});
+
+/*Post comment function */
+app.post("/comments/:id", async function (req, res) {
+  if (!req.session.user_id) {
+    res.redirect("/login");
+    return;
+  }
+  await app.locals.pool.query(
+    "INSERT INTO comments (post_id, user_id, text ) VALUES ($1, $2, $3)",
+    [req.params.id, req.session.userid, req.body.text]
   );
   res.redirect("/gallery");
 });
@@ -75,7 +88,18 @@ app.get("/gallery", async function (req, res) {
 });
 
 app.get("/profil", async function (req, res) {
-  const users = await app.locals.pool.query("select * from users where id = 1");
+  if (!req.session.user_id) {
+    res.redirect("/login");
+    return;
+  }
+  const users = await app.locals.pool.query(
+    "SELECT * FROM users WHERE id = $1",
+    [req.session.user_id]
+  );
+  const posts = await app.locals.pool.query(
+    "SELECT * FROM posts WHERE user_id = $1",
+    [req.session.user_id]
+  );
   res.render("profil", { users: users.rows });
 });
 

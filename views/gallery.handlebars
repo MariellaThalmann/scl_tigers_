@@ -1,11 +1,11 @@
 <h2>Gallery</h2>
-<button class="login"> <a href="/new_post">Create Post</a></button>
+<button class="buttons"> <a href="/new_post">Create Post</a></button>
 
 {{#posts}}
   <div class="post">
     <img src="/uploads/{{image}}" alt="" />
     <div class="innercontainer">
-      <small>{{timestamp}}</small>
+      <small>{{date}}</small>
       <h1>{{username}}</h1>
       <h2>{{title}}</h2>
       <p>{{description}}</p>
@@ -13,7 +13,16 @@
 
       <!--Likes_neu-->
       <form action="/like/{{id}}" enctype="multipart/form-data" method="POST">
-        <input type="image" src="/public/like.jpg" />
+        <input type="image" src="/like.jpg" />
+      </form>
+
+      <!--Kommentar neu-->
+      <form
+        action="/comments/{{id}}"
+        enctype="multipart/form-data"
+        method="POST"
+      >
+        <input type="submit" value="comment" />
       </form>
 
     </div>

@@ -21,20 +21,37 @@ main {
 }
 
 /*Header***********************************************************/
+header h5 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-left: 20px;
+  padding-left: 10px;
+}
 header {
   display: flex;
-  padding-left: 10px;
-  justify-content: space-evenly; /* Zentriert horizontal */
-  align-items: center; /* Zentriert vertikal */
-  padding: 10px 20px;
+  justify-content: space-between; /* Zentriert horizontal */
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-left: 0;
+  padding-bottom: 20px;
   background-color: var(--green);
   color: var(--white);
-  height: 10vh; /* Höhe auf 100% der Ansichtsfläche setzen */
 }
 
 /*navigationstext gestalten */
 header a:hover {
   color: var(--black);
+}
+
+header div {
+  display: flex;
+  margin-top: 15px;
+  margin-right: 20px;
+}
+
+header div a {
+  padding-left: 40px;
 }
 /*****************************************************************
 
@@ -48,82 +65,43 @@ a {
 /***************************************************************
 
 
-/*Button-Gestaltung*********************************************/
-/*
-button {
-  background-color: var(--green);
-  border-radius: 8px;
-  border-width: 0;
-  margin: 10px;
-  width: 323px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}*/
-/*
-button {
-  border-width: 0;
-  background-color: white;
-  margin: 0px;
-  margin-bottom: 30px;
-  margin-top: 20px;
-}
+/*Buttons-Gestaltung*********************************************/
+/*Button selber*/
+.buttons a {
+  display: inline-block;
 
-button a {
   color: var(--white);
   background-color: var(--green);
+
+  width: 250px;
+  height: 35px;
+  padding: 20px 10px 10px 10px ;
   border-radius: 8px;
-  border-width: 0;
-  margin-top: 20px;
-  padding: 10px;
-  width: 300px;
-}
-button a:hover {
-  color: var(--black);
-  background-color: var(--grey);
 }
 
-button:hover {
-  color: var(--black);
-}
-*/
-.login {
-  color: var(--white);
-  background-color: var(--green);
-  width: 269px;
-  height: 58px;
-  border-radius: 8px;
-  border-width: 0;
-  margin-bottom: 30px;
-  margin-top: 20px;
-  margin-right: 120px;
-}
-.login a:hover {
-  color: var(--black);
-  background-color: var(--grey);
-}
-.login:hover {
-  background-color: var(--grey);
+/*Box um Buttons*/
+.buttons {
+
+display: flex;
+flex-direction: column;
+
+color: none;
+background-color: var(--white);
+
+border-width: 0;
+width: 10%;
+
+margin-bottom: 2%;
 }
 
-.registration {
-  color: var(--black);
-  background-color: var(--grey);
-  width: 269px;
-  height: 58px;
-  border-radius: 8px;
-  border-width: 0;
-  margin-bottom: 30px;
-  margin-top: 20px;
-}
-/*
-button:hover {
+.buttons a:hover {
   background-color: var(--grey);
   color: var(--black);
 }
-****************************************************************/
 
 
-/*Fonts**********************************************************/
+
+/*allgemeine Fonts**********************************************************/
 h1 {
   margin-top: 10px;
   font-size: 64px;
@@ -142,6 +120,7 @@ p {
   font-weight: 200;
   margin-top: 20px;
 }
+
 
 
 
@@ -170,7 +149,10 @@ img {
 /*****************************************************************
 
 
-/*Login***********************************************************/
+
+
+
+/*Login und Registration***********************************************************/
 form {
   width: 97%;
 }
@@ -185,8 +167,6 @@ form input{
   margin-bottom: 20px;
 width: 100%;
 }
-
-
 
 
 .Button-Form {
@@ -205,17 +185,34 @@ width: 100%;
   background-color: var(--grey);
 }
 
-.Regi {
+.Regi-Link {
   color: var(--green);
   margin-top: 20px;
 }
 
-.Regi:hover {
+.Regi-Link:hover {
   color: var(--grey);
 }
 
 
+
+
+
+
+.registration {
+  color: var(--black);
+  background-color: var(--grey);
+  width: 269px;
+  height: 58px;
+  border-radius: 8px;
+  border-width: 0;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
 /*********************************************************************
+
+
+
 
 
 /*Footer**********************************************************/
@@ -231,6 +228,11 @@ footer h5 {
   font-weight: 600;
   margin-left: 20px;
   margin-top: 10px;
+}
+
+
+footer h5:hover {
+  color: var(--green)
 }
 
 footer a {
