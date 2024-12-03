@@ -1,8 +1,17 @@
 <!--Create post Funktion-->
-<form action="/create_post" enctype="multipart/form-data" method="post">
-  <input type="text" name="title" />
-  <input type="file" name="image" />
-  <input type="date" name="date" />
-  <input type="text" name="description" />
-  <input type="submit" />
-</form>
+<div class="post">
+  <form action="/create_post" enctype="multipart/form-data" method="post">
+    <div class="innercontainer">
+    <label>Titel</label>
+    <input class="create_post_input" type="text" name="title" />
+    
+    <label>Datum</label>
+    <input class="create_post_input" type="date" name="date" />
+    <label>Beschreibung</label>
+    <input class="create_post_input" type="text" name="description" />
+    <input type="submit" />
+  </form>
+</div>
+</div>
+<label>Bild</label>
+    <input class="create_post_input_img" type="file" name="image" />

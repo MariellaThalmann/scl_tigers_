@@ -58,9 +58,14 @@ app.post("/comments/:id", async function (req, res) {
     res.redirect("/login");
     return;
   }
+  const comment = req.body.text;
+  if (!comment || comment.trim() === "") {
+    res.redirect(`/post/${req.params.id}`); // Keine leeren Kommentare
+    return;
+  }
   await app.locals.pool.query(
-    "INSERT INTO comments (user_id, post_id, text ) VALUES ($1, $2, $3)",
-    [req.params.id, req.body.post_id, req.session.user_id, req.body.text]
+    "INSERT INTO comments (post_id, user_id, text) VALUES ($1, $2, $3)",
+    [req.params.id, req.session.user_id, comment]
   );
   res.redirect("/gallery");
 });
@@ -93,15 +98,18 @@ app.get("/profil", async function (req, res) {
     res.redirect("/login");
     return;
   }
+  // Benutzerinformationen abrufen
   const users = await app.locals.pool.query(
     "SELECT * FROM users WHERE id = $1",
     [req.session.user_id]
   );
+  // Posts des Benutzers abrufen
   const posts = await app.locals.pool.query(
-    "SELECT * FROM posts WHERE id = $1",
+    "SELECT * FROM posts WHERE user_id = $1",
     [req.session.user_id]
   );
-  res.render("profil", { users: users.rows });
+  // Profil rendern mit Benutzer- und Postdaten
+  res.render("profil", { users: users.rows, posts: posts.rows });
 });
 
 /* Login */

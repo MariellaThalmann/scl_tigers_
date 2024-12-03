@@ -212,6 +212,21 @@ form input{
 width: 100%;
 }
 
+.create_post_input {
+  background-color: var(--white);
+  border-radius: 8px;
+  border-width: 0;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+width: 100%;
+}
+
+input #file-upload-button {
+  background-color: var(--aqua);
+}
+
 
 .Button-Form {
   color: var(--white);
