@@ -30,6 +30,7 @@ export function createApp(dbconfig) {
     })
   );
 
+  
   app.locals.pool = pool;
   /* Wie Registration und das Login funktioniert*/
   app.get("/registration", function (req, res) {

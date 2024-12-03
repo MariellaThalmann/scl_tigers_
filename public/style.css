@@ -10,6 +10,13 @@ main {
   margin-top: 10%;
   margin-right: 10%;
   margin-bottom: 5%;
+  flex: 1;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /*definierte Farben*/
@@ -69,7 +76,6 @@ a {
 /*Button selber*/
 .buttons a {
   display: inline-block;
-
   color: var(--white);
   background-color: var(--green);
 
@@ -81,23 +87,27 @@ a {
 
 /*Box um Buttons*/
 .buttons {
-
-display: flex;
-flex-direction: column;
-
 color: none;
 background-color: var(--white);
-
 border-width: 0;
-width: 10%;
-
-margin-bottom: 2%;
+width: 10%;;
+margin-right: 220px;
+margin-top: 10px;
 }
 
+/* Button selber hover-effekt */
 .buttons a:hover {
   background-color: var(--grey);
   color: var(--black);
 }
+
+/* Box um beide Buttons */
+.Box-Button {
+  display: flex;
+  flex-direction: row;
+  display: inline-block;
+}
+
 
 
 
@@ -132,19 +142,53 @@ p {
   background-color: var(--grey);
   border-radius: 8px;
   margin-bottom: 1rem;
-  padding: 10px;
+  padding: 0;
   margin-top: 30px;
   width: 60vw;
 }
+
+
+/* hover effects für post */
+.post:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Schatten bei Hover */
+}
+
+
 img {
+  object-fit: cover;
+  border-radius: 8px 0 0 8px; /* Nur die linken Ecken abrunden */
   width: 30vw;
-  margin-right: 3vw;
   height: auto;
-  object-fit: contain;
 }
 .innercontainer {
   display: flex;
   flex-direction: column;
+  padding: 4%;
+}
+
+/* like button gestalten */
+.heart {
+  margin-top: 12px;
+  width: 10%;
+}
+
+
+/* jetzt kommentieren feld stylen */
+.comment {
+  background-color: #D9D9D9 ;
+  color: #919191;
+}
+
+
+
+/* button zum kommentar senden */
+.button-comment {
+  background-color: var(--green);
+  color: var(--white);
+}
+.button-comment:hover {
+  background-color: #D9D9D9;
+  color: var(--black);
 }
 /*****************************************************************
 
@@ -217,6 +261,8 @@ width: 100%;
 
 /*Footer**********************************************************/
 footer {
+  position:relative;
+  bottom: 1%;
   background-color: white;
   border-top: 1px solid #9C9C9C; /* 2px dicker schwarzer Border */
   padding: 10px;             /* Abstand im Footer-Inhalt */

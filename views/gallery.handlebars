@@ -13,7 +13,7 @@
 
       <!--Likes_neu-->
       <form action="/like/{{id}}" enctype="multipart/form-data" method="POST">
-        <input type="image" src="/like.jpg" />
+        <input class="heart" type="image" src="/heart.png" />
       </form>
 
       <!--Kommentar neu-->
@@ -22,7 +22,8 @@
         enctype="multipart/form-data"
         method="POST"
       >
-        <input type="submit" value="comment" />
+        <input class="comment" type="text" value="Jetzt kommentieren..." />
+        <input class="button-comment" type="submit" value="senden" />
       </form>
 
     </div>

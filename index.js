@@ -1,3 +1,4 @@
+/* Datenbank Verbindung */
 import { createApp, upload } from "./config.js";
 
 const app = createApp({
@@ -21,7 +22,7 @@ app.get("/new_post", async function (req, res) {
   }
   res.render("new_post", {});
 });
-
+/* Create Post Function */
 app.post("/create_post", upload.single("image"), async function (req, res) {
   await app.locals.pool.query(
     "INSERT INTO posts (title, image, date, likes, description, user_id) VALUES ($1, $2, $3, $4, $5, $6)",
@@ -58,8 +59,8 @@ app.post("/comments/:id", async function (req, res) {
     return;
   }
   await app.locals.pool.query(
-    "INSERT INTO comments (post_id, user_id, text ) VALUES ($1, $2, $3)",
-    [req.params.id, req.session.userid, req.body.text]
+    "INSERT INTO comments (user_id, post_id, text ) VALUES ($1, $2, $3)",
+    [req.params.id, req.body.post_id, req.session.user_id, req.body.text]
   );
   res.redirect("/gallery");
 });
@@ -81,12 +82,12 @@ app.get("/post/:id", async function (req, res) {
 app.get("/impressum", async function (req, res) {
   res.render("impressum", {});
 });
-
+/* Gallery */
 app.get("/gallery", async function (req, res) {
   const posts = await app.locals.pool.query("select * from posts");
   res.render("gallery", { posts: posts.rows });
 });
-
+/* Profil */
 app.get("/profil", async function (req, res) {
   if (!req.session.user_id) {
     res.redirect("/login");
@@ -97,16 +98,17 @@ app.get("/profil", async function (req, res) {
     [req.session.user_id]
   );
   const posts = await app.locals.pool.query(
-    "SELECT * FROM posts WHERE user_id = $1",
+    "SELECT * FROM posts WHERE id = $1",
     [req.session.user_id]
   );
   res.render("profil", { users: users.rows });
 });
 
+/* Login */
 app.get("/login", async function (req, res) {
   res.render("login", {});
 });
-
+/* Registration */
 app.get("/registration", async function (req, res) {
   res.render("login", {});
 });
