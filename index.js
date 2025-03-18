@@ -13,114 +13,30 @@ const app = createApp({
 app.get("/", async function (req, res) {
   res.render("start", {});
 });
-
-/*29.10.2024 Formular Post*/
-app.get("/new_post", async function (req, res) {
-  if (!req.session.user_id) {
-    res.redirect("/login");
-    return;
-  }
-  res.render("new_post", {});
+app.get("/news", async function (req, res) {
+  res.render("news", {});
 });
-/* Create Post Function */
-app.post("/create_post", upload.single("image"), async function (req, res) {
-  await app.locals.pool.query(
-    "INSERT INTO posts (title, image, date, likes, description, user_id) VALUES ($1, $2, $3, $4, $5, $6)",
-    [
-      req.body.title,
-      req.file.filename,
-      req.body.date,
-      0,
-      req.body.description,
-      req.session.user_id,
-    ]
-  );
-  res.redirect("/gallery");
+app.get("/spielplan", async function (req, res) {
+  res.render("spielplan", {});
 });
-
-/* Post like function*/
-app.post("/like/:id", async function (req, res) {
-  if (!req.session.user_id) {
-    res.redirect("/login");
-    return;
-  }
-
-  await app.locals.pool.query(
-    "INSERT INTO likes (post_id, user_id) VALUES ($1, $2)",
-    [req.params.id, req.session.user_id]
-  );
-  res.redirect("/gallery");
+app.get("/tickets", async function (req, res) {
+  res.render("tickets", {});
 });
-
-/*Post comment function */
-app.post("/comments/:id", async function (req, res) {
-  if (!req.session.user_id) {
-    res.redirect("/login");
-    return;
-  }
-  const comment = req.body.text;
-  if (!comment || comment.trim() === "") {
-    res.redirect(`/post/${req.params.id}`); // Keine leeren Kommentare
-    return;
-  }
-  await app.locals.pool.query(
-    "INSERT INTO comments (post_id, user_id, text) VALUES ($1, $2, $3)",
-    [req.params.id, req.session.user_id, comment]
-  );
-  res.redirect("/gallery");
+app.get("/aboutus", async function (req, res) {
+  res.render("aboutus", {});
 });
-
-/* post id */
-app.get("/post/:id", async function (req, res) {
-  const posts = await app.locals.pool.query(
-    "SELECT * from posts WHERE id = $1",
-    [req.params.id]
-  );
-  const likes = await app.locals.pool.query(
-    "SELECT COUNT(user_id) FROM likes WHERE post_id = $1",
-    [req.params.id]
-  );
-  res.render("post", { posts: posts.rows, likes: likes.rows[0] });
+app.get("/stadion", async function (req, res) {
+  res.render("stadion", {});
 });
-
-/* Impressum*/
 app.get("/impressum", async function (req, res) {
   res.render("impressum", {});
 });
-/* Gallery */
-app.get("/gallery", async function (req, res) {
-  const posts = await app.locals.pool.query("select * from posts");
-  res.render("gallery", { posts: posts.rows });
+app.get("/sclyoungtigers", async function (req, res) {
+  res.render("sclyoungtigers", {});
 });
-/* Profil */
-app.get("/profil", async function (req, res) {
-  if (!req.session.user_id) {
-    res.redirect("/login");
-    return;
-  }
-  // Benutzerinformationen abrufen
-  const users = await app.locals.pool.query(
-    "SELECT * FROM users WHERE id = $1",
-    [req.session.user_id]
-  );
-  // Posts des Benutzers abrufen
-  const posts = await app.locals.pool.query(
-    "SELECT * FROM posts WHERE user_id = $1",
-    [req.session.user_id]
-  );
-  // Profil rendern mit Benutzer- und Postdaten
-  res.render("profil", { users: users.rows, posts: posts.rows });
+app.get("/news2", async function (req, res) {
+  res.render("news2", {});
 });
-
-/* Login */
-app.get("/login", async function (req, res) {
-  res.render("login", {});
-});
-/* Registration */
-app.get("/registration", async function (req, res) {
-  res.render("login", {});
-});
-
 /* Wichtig! Diese Zeilen müssen immer am Schluss der Website stehen! */
 app.listen(3010, () => {
   console.log(`Example app listening at http://localhost:3010`);

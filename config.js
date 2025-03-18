@@ -30,56 +30,8 @@ export function createApp(dbconfig) {
     })
   );
 
-  
   app.locals.pool = pool;
-  /* Wie Registration und das Login funktioniert*/
-  app.get("/registration", function (req, res) {
-    res.render("registration");
-  });
 
-  app.post("/registration", function (req, res) {
-    var password = bcrypt.hashSync(req.body.passwort, 10);
-    pool.query(
-      "INSERT INTO users (username, prename, name, age, phonenumber, email, passwort) VALUES ($1, $2, $3, $4, $5, $6, $7)",
-      [
-        req.body.username,
-        req.body.prename,
-        req.body.name,
-        req.body.age,
-        req.body.phonenumber,
-        req.body.email,
-        password,
-      ],
-      (error, result) => {
-        if (error) {
-          console.log(error);
-        }
-        res.redirect("/login");
-      }
-    );
-  });
-
-  app.get("/login", function (req, res) {
-    res.render("login");
-  });
-
-  app.post("/login", function (req, res) {
-    pool.query(
-      "SELECT * FROM users WHERE email = $1",
-      [req.body.email],
-      (error, result) => {
-        if (error) {
-          console.log(error);
-        }
-        if (bcrypt.compareSync(req.body.passwort, result.rows[0].passwort)) {
-          req.session.user_id = result.rows[0].id;
-          res.redirect("/gallery");
-        } else {
-          res.redirect("/login");
-        }
-      }
-    );
-  });
   return app;
 }
 

@@ -36,13 +36,10 @@ header h5 {
   padding-left: 10px;
 }
 header {
-  display: flex;
-  justify-content: space-between; /* Zentriert horizontal */
   padding-top: 10px;
   padding-right: 20px;
   padding-left: 0;
   padding-bottom: 20px;
-  background-color: var(--green);
   color: var(--white);
 }
 
