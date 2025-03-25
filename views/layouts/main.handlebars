@@ -11,15 +11,24 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
   </head>
 
   <body>
-    <header style="background-image: url('/uploads/2025-03-01-Tigers-Ajoie_news.jpg');">
-      <a href="/"><img
-          src="/uploads/Logo_SCL_Tigers.svg.png"
-          alt="SCL Tigers Logo"
-        /></a>
-      <div>
+    <header
+      style="background-image: url('/uploads/2025-03-01-Tigers-Ajoie_news.jpg');
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;"
+    >
+      <div class="header">
+        <a href="/"><img
+            src="/uploads/Logo_SCL_Tigers.svg.png"
+            alt="SCL Tigers Logo"
+          /></a>
         <a href="/">Home</a>
         <a href="/news" class="">News</a>
         <a href="/spielplan">Spielplan</a>
@@ -35,12 +44,24 @@
     </main>
     <footer>
       <h5>Kontakt</h5>
-      <p>SCL Tigers AG</p>
-      <p>Güterstrasse 18</p>
-      <p>Postfach</p>
-      <p>CH-3550 Langnau i.E.</p>
-      <p><a href="+41 34 408 35 35">+41 34 408 35 35</a></p>
-</p> <a href="info@scltigers.ch">info@scltigers.ch</a></p>
+      <div class="adressblock">
+        <p>SCL Tigers AG</p>
+        <p>Güterstrasse 18</p>
+        <p>Postfach</p>
+        <p>CH-3550 Langnau i.E.</p>
+      </div>
+      <p><i class="fa-solid fa-phone" style="color: #ffffff;"></i><a
+          href="+41 34 408 35 35"
+        >+41 34 408 35 35</a>
+      </p>
+      <p><i class="fa-solid fa-envelope" style="color: #ffffff;"></i><a
+          href="info@scltigers.ch"
+        >info@scltigers.ch</a></p>
+
+      <i class="fa-brands fa-instagram" style="color: #ffffff;"></i>
+      <i class="fa-brands fa-youtube" style="color: #ffffff;"></i>
+      <i class="fa-brands fa-square-facebook" style="color: #ffffff;"></i>
+
     </footer>
 
   </body>

@@ -25,6 +25,9 @@ body {
   --green: #8abca4;
   --black: #000000;
   --grey: #ededed;
+  --darkgrey: #2F2F2E;
+  --red: #ED1C24;
+  --yellow: #FFD600 ;
 }
 
 /*Header***********************************************************/
@@ -50,13 +53,16 @@ header a:hover {
 
 header div {
   display: flex;
+  flex-direction: row;
   margin-top: 15px;
   margin-right: 20px;
+  align-items: center;
 }
 
 header div a {
   padding-left: 40px;
 }
+
 /*****************************************************************
 
 /*Links********************************************************/
@@ -267,18 +273,63 @@ input #file-upload-button {
 }
 /*********************************************************************
 
+/*home****************************/
+.spiel {
+  display: flex;
+  flex-direction: row;
+  gap: 2vw;
+}
+
+/*Div Social Wall***************************/
+div.Social-Wall {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 3 Spalten */
+  gap: 10px; /* Abstand zwischen den Divs */
+}
+
+.social-wall-box {
+  background-color: #F0F6FF;
+  padding: 2vw;
+}
+
+/*News***********************************/
+
+/*blöcke*/
+.news {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 Spalten */
+  gap: 20px; /* Mehr Abstand zwischen den Elementen */
+  padding: 20px; /* Etwas Abstand zum Rand */
+}
+
+/*breadcrumbs*/
+.breadcrumbs-nav {
+  display: flex;
+  flex-direction: row;
+}
 
 
+/*Tickets****************************************/
+.tickets {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 Spalten */
+  gap: 20px; /* Mehr Abstand zwischen den Elementen */
+}
 
-
+.tickets-button {
+  background-color: var(--red);
+  color: var(--yellow);
+  padding: 2vw;
+}
 /*Footer**********************************************************/
 footer {
   position:relative;
   bottom: 1%;
-  background-color: white;
   border-top: 1px solid #9C9C9C; /* 2px dicker schwarzer Border */
   padding: 10px;             /* Abstand im Footer-Inhalt */
   margin-top: 60px;
+  background-color: var(--darkgrey);
+  color: var(--white);
 }
 
 footer h5 {
