@@ -9,7 +9,7 @@ const app = createApp({
   port: 30211,
 });
 
-/* Startseite */
+/* Startseite XY */
 app.get("/", async function (req, res) {
   res.render("start", {});
 });
