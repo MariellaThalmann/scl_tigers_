@@ -72,28 +72,51 @@ header div a {
 
 /********************
 
+
+
+
+
+
+
 /*Bild Startseite (long-header)*/
 .longHeader{
   position: relative;
-  background-image: url('/uploads/2025-03-01-Tigers-Ajoie_news.jpg');
+  background-image: url('/uploads/Teamfoto.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 130vh;
   width: 100vw;
   z-index: 0; /* Wichtig für Schichten */
 }
 
-/* Overlay */
-.longHeader::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6); /* Hier kannst du die Dunkelheit anpassen */
-  z-index: 1;
+/* Overlay Text*/
+.spielplanWrapper {
+  margin-left: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* sorgt für linke Ausrichtung */
 }
+
+.spielplanWrapper h1 {
+  font-size: 40px;
+  margin-bottom: 0;
+}
+
+.spielplanWrapper .tabelle {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* sorgt für linke Ausrichtung */
+}
+
+.Reihe p{
+  margin-right: 15%;
+}
+.Reihe:hover {
+  color: var(--yellow);
+}
+
+
 
 /* Damit Inhalt (Navigation usw.) über dem Overlay liegt */
 .longHeader .header {
