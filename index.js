@@ -37,6 +37,9 @@ app.get("/sclyoungtigers", async function (req, res) {
 app.get("/news2", async function (req, res) {
   res.render("news2", {});
 });
+app.get("/page", async function (req, res) {
+  res.render("page", {});
+});
 /* Wichtig! Diese Zeilen müssen immer am Schluss der Website stehen! */
 app.listen(3010, () => {
   console.log(`Example app listening at http://localhost:3010`);
