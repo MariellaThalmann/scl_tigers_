@@ -48,7 +48,7 @@ header {
 
 /*navigationstext gestalten */
 header a:hover {
-  color: var(--black);
+  color: var(--yellow);
 }
 
 header div {
@@ -75,7 +75,7 @@ header div a {
 
 
 
-/* Start */
+/* Start **********************/
 .Social-Wall {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
@@ -96,7 +96,7 @@ header div a {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 65vh;
   width: 100vw;
   z-index: 0; /* Wichtig für Schichten */
 }
@@ -109,31 +109,22 @@ header div a {
   align-items: flex-start; /* sorgt für linke Ausrichtung */
 }
 
-.spielplanWrapper h1 {
-  font-size: 40px;
-  margin-bottom: 0;
-}
-
-.spielplanWrapper .tabelle {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* sorgt für linke Ausrichtung */
-}
-
-.tabelle {
-  margin-bottom: 40px;
-}
-
-
-.Reihe p{
-  margin-right: 15%;
-  white-space: nowrap;
-  
-}
-.Reihe:hover {
+.start-button {
+  background-color: var(--red);
   color: var(--yellow);
+  padding: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-right: 4vw;
 }
 
+.start-buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+
+/*
 .Spielplan-Home {
   margin-bottom: 40px;
   margin-left: 0;
@@ -142,6 +133,7 @@ header div a {
 .Spielplan-Home:hover {
  color: var(--yellow);
 }
+*/
 
 /* Damit Inhalt (Navigation usw.) über dem Overlay liegt */
 .longHeader .header {
@@ -149,6 +141,12 @@ header div a {
   z-index: 2;
 }
 
+td.start-gameplan {
+  font-size: 24px;
+  color: var(--white);
+  padding-right: 2vw;
+  padding-bottom: 2vw;
+}
 
 /********************
 
@@ -225,13 +223,16 @@ h2 {
   margin-top: 20px;
 }
 
+h3 {
+  font-size: 20px;
+  font-weight: 700;
+}
 p {
   font-size: 16px;
   font-weight: 200;
   margin-top: 5px;
   margin-bottom: 15px;
 }
-
 
 
 h5 {
@@ -457,6 +458,19 @@ div.Social-Wall {
 table {
   margin-top: 40px;
 }
+
+
+/******************** Spielplan ********************************/
+a.gameplan {
+font-size: 20px;
+font-weight: 700;
+color: var(--red);
+}
+
+.gameplan:hover {
+color: grey;
+}
+
 /*Footer**********************************************************/
 footer {
   position:relative;
