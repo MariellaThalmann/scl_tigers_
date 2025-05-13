@@ -11,12 +11,14 @@ main {
   margin-right: 7%;
   margin-bottom: 5%;
   flex: 1;
+  width: 100vw;
 }
 
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  width: 100vw;
 }
 
 /*definierte Farben*/
@@ -79,7 +81,110 @@ header div a {
 .Social-Wall {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-  width: 70vw;
+  width: 50vw;
+}
+
+.button {
+  background-color: var(--red);
+  color: var(--yellow);
+  margin-top: 120px;
+  margin-bottom: 120px;
+  padding: 1vw;
+}
+
+
+/*Cars Social Wall******3*/
+
+.card {
+  width: 320px;
+  border-radius: 20px;
+  background: #f0f4fd;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  margin-top: 80px;
+  margin-right: 80px;
+}
+
+.image-wrapper {
+  position: relative;
+}
+
+.image-wrapper img {
+  width: 100%;
+  display: block;
+}
+
+.corner-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70px;
+  height: 70px;
+  background-color: #f1c40f;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.corner-icon .icon {
+  padding: 10px;
+  font-size: 1.2em;
+}
+
+.content {
+  padding: 20px;
+}
+
+.date {
+  font-size: 0.8em;
+  color: var(--red);
+  margin: 0 0 8px;
+}
+
+h2 {
+  font-size: 1.3em;
+  margin: 0 0 8px;
+}
+
+.description {
+  font-size: 0.95em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.hashtags {
+  color: #3f3f7f;
+  font-size: 0.9em;
+  margin-bottom: 15px;
+}
+
+.interactions {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9em;
+  color: #444;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Immer 2 Spalten */
+  gap: 30px;
+  width: 100vw;
+}
+
+.news-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+  width: 30vw;
+}
+
+.news-card img {
+  width: 30vw;
+  height: auto;
+  display: block;
 }
 
 
@@ -96,7 +201,7 @@ header div a {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 65vh;
+  height: 70vh;
   width: 100vw;
   z-index: 0; /* Wichtig für Schichten */
 }
@@ -418,6 +523,28 @@ div.Social-Wall {
   flex-direction: row;
 }
 
+ul {
+  display: flex;
+  flex-direction: row;
+  padding: 2vw;
+  text-decoration: none;
+  list-style-type: none;
+}
+ul li {
+  color: red;
+  padding: 20px;
+}
+
+ul li:hover {
+  background-color: var(--red);
+  color: var(--yellow);
+}
+
+.news-box {
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+}
 
 /*Tickets****************************************/
 .tickets {
@@ -471,6 +598,20 @@ color: var(--red);
 color: grey;
 }
 
+.styled-table {
+  margin-bottom: 2vw;
+}
+.fa-file-arrow-down {
+  padding-right: 10px;
+}
+
+.styled-table td {
+  padding-right: 3vw;
+}
+
+.styled-table th {
+  text-align: left;
+}
 /*Footer**********************************************************/
 footer {
   position:relative;
