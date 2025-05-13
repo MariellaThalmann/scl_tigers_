@@ -6,12 +6,10 @@
 
 /*Main = Body ohne Header und ohne Footer*/
 main {
-  margin-left: 7%;
-  margin-top: 7%;
-  margin-right: 7%;
-  margin-bottom: 5%;
-  flex: 1;
-  width: 100vw;
+  margin-top: 5vw;
+  margin-left: 5vw;
+  margin-bottom: 5vw;
+  width: 90vw;
 }
 
 body {
@@ -83,12 +81,15 @@ header div a {
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   width: 50vw;
 }
-
-.button {
+.box-social {
+  background-color: none;
+  margin-top: 4vw;
+}
+.news-button {
   background-color: var(--red);
   color: var(--yellow);
-  margin-top: 120px;
-  margin-bottom: 120px;
+  margin-top: 3vw;
+  margin-bottom: 3vw;
   padding: 1vw;
 }
 
@@ -166,19 +167,21 @@ h2 {
   color: #444;
 }
 
+
 .news-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Immer 2 Spalten */
-  gap: 30px;
-  width: 100vw;
+  /*gap: 50px;*/
+  width: 90vw;
 }
 
 .news-card {
-  background: #fff;
   border-radius: 8px;
   overflow: hidden;
   transition: transform 0.2s ease;
   width: 30vw;
+  margin-right:10vw;
+  margin-bottom: 5vw;
 }
 
 .news-card img {
@@ -335,8 +338,8 @@ h3 {
 p {
   font-size: 16px;
   font-weight: 200;
-  margin-top: 5px;
-  margin-bottom: 15px;
+  margin-top: 15px;
+  margin-bottom: 30px;
 }
 
 
@@ -500,6 +503,7 @@ div.Social-Wall {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 3 Spalten */
   gap: 10px; /* Abstand zwischen den Divs */
+  margin-bottom: 5vw ;
 }
 
 .social-wall-box {
@@ -515,8 +519,18 @@ div.Social-Wall {
   grid-template-columns: repeat(2, 1fr); /* 2 Spalten */
   gap: 20px; /* Mehr Abstand zwischen den Elementen */
   padding: 20px; /* Etwas Abstand zum Rand */
+  margin-top: 4vw;
 }
 
+.news-box {
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+}
+
+.news-box img {
+  border-radius: 8px;
+}
 /*breadcrumbs*/
 .breadcrumbs-nav {
   display: flex;
@@ -528,7 +542,10 @@ ul {
   flex-direction: row;
   padding: 2vw;
   text-decoration: none;
+  justify-content: center; /* Horizontal zentrieren */
+  align-items: center; 
   list-style-type: none;
+  text-align: left;
 }
 ul li {
   color: red;
@@ -538,12 +555,6 @@ ul li {
 ul li:hover {
   background-color: var(--red);
   color: var(--yellow);
-}
-
-.news-box {
-  display: flex;
-  flex-direction: column;
-  width: 30vw;
 }
 
 /*Tickets****************************************/

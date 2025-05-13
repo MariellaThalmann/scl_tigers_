@@ -1,1 +1,161 @@
+{{> shortHeader}}
+<style>
+
+    h1, h2 {
+      color: #aa1e1e;
+      margin-left: 20px;
+      margin-top: 40px;
+    }
+
+    h3 {
+        margin-left: 20px; 
+        margin-top: 5px; 
+    }
+   
+
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 40px;
+      background-color: #fff;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f0f0f0;
+    }
+
+    ul {
+      margin-top: 0;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        margin: 20px;
+      }
+
+      table, thead, tbody, th, td, tr {
+        display: block;
+        width: 100%;
+      }
+
+      th {
+        display: none;
+      }
+
+      td {
+        position: relative;
+        padding-left: 50%;
+      }
+
+      td::before {
+        position: absolute;
+        left: 15px;
+        top: 12px;
+        font-weight: bold;
+        white-space: nowrap;
+      }
+
+      td:nth-of-type(1)::before { content: "Bereich"; }
+      td:nth-of-type(2)::before { content: "Vorher"; }
+      td:nth-of-type(3)::before { content: "Nachher"; }
+    }
+  </style>
 <h1> Erklärungsseite Website SCL Tigers</h1>
+<h2>💡 Ziel der Überarbeitung</h2>
+<p>Ziel der Überarbeitung Die bestehende Website der SCL Tigers wirkte
+  überladen, teils unübersichtlich und wies UX-Schwächen bei der
+  Benutzerführung, Struktur und Darstellung auf. Unser Ziel war es, eine
+  modernere, klarere und nutzerfreundlichere Version zu entwickeln, die sowohl
+  Fans als auch neue Besucher intuitiv durch das Angebot führt.</p>
+
+<h2>🛠 Was wir UX-technisch verbessert haben:</h2>
+
+<h3>1. Klare Informationshierarchie</h3>
+<ul>
+  <li>Die nächsten Spiele werden nun prominent, gut lesbar und ohne visuelle
+    Ablenkung dargestellt.</li>
+  <li>Wichtige Informationen wie Datum, Uhrzeit und Gegner sind in einer
+    konsistenten Zeile angeordnet.</li>
+  <li>Call-to-Actions („Zum Spielplan“, „Tickets“) sind auffällig und direkt
+    unter den Spieldaten platziert.</li>
+</ul>
+
+<h3>2. Modernes und visuelles Design</h3>
+<ul>
+  <li>Der Hintergrund mit Spielern in Aktion vermittelt Emotion und Dynamik.</li>
+  <li>Schriftgrößen und Farben wurden angepasst, um Kontraste und Lesbarkeit zu
+    verbessern.</li>
+  <li>Icons und Farben wurden gezielt eingesetzt, um Benutzer durch Inhalte zu
+    führen.</li>
+</ul>
+
+<h3>3. Social Wall – besser integriert</h3>
+<ul>
+  <li>Beiträge aus sozialen Medien sind visuell ansprechender dargestellt.</li>
+  <li>Inhalte sind gleichmäßig angeordnet und zeigen klare Kategorien wie
+    „Video“, „Märit“ oder „Schlägerei“.</li>
+  <li>Hashtags, Kommentare und Likes sind intuitiv eingebunden.</li>
+</ul>
+
+<h3>Footer-Bereich überarbeitet</h3>
+<ul>
+  <li>Kontaktinformationen, Impressum und rechtliche Hinweise sind nun deutlich
+    besser gegliedert.</li>
+  <li>Alle Social-Media-Icons sind vorhanden und einheitlich dargestellt.</li>
+  <li>Der Footer ist cleaner und ansprechender gestaltet.</li>
+</ul>
+
+<h2>🔄 Technische & strukturelle Änderungen</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Bereich</th>
+          <th>Vorher</th>
+          <th>Nachher</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Spielplan</td>
+          <td>man findet ihn schlecht, zu eng, unübersichtlich</td>
+          <td>Klare, tabellarische Darstellung</td>
+        </tr>
+        <tr>
+          <td>Navigation</td>
+          <td>Überladen, viele Menüpunkte</td>
+          <td>Reduzierte, benutzerfreundliche Navigation</td>
+        </tr>
+        <tr>
+          <td>Social Wall</td>
+          <td>Teilweise unsortiert, überladen, zu viele harte Farben</td>
+          <td>Einheitliches Card-Design mit Kategorien</td>
+        </tr>
+        <tr>
+          <td>Footer</td>
+          <td>Unstrukturiert, klein</td>
+          <td>Klare Kontaktbox mit Icons & Links</td>
+        </tr>
+    
+      </tbody>
+    </table>
+
+    <h2>📈 Ergebnis</h2>
+    <ul>
+      <li>Verbesserte Usability</li>
+      <li>Modernes, aufgeräumtes Design</li>
+      <li>Einfachere Navigation für Nutzer</li>
+      <li>Bessere Übersichtlichkeit auf Desktop</li>
+      <li>Grundlegende, aber noch ausbaufähige Mobile-Optimierung</li>
+    </ul>
